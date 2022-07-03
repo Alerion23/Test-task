@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/webViewFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.wenger.mytestapplication.ui.fragments.StartFragment"
+        android:label="@string/start_fragment"
+        tools:layout="@layout/start_fragment" >
+
+        <action
+            android:id="@+id/go_to_web_view_fragment"
+            app:destination="@id/webViewFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.wenger.mytestapplication.ui.fragments.WebViewFragment"
+        android:label="@string/web_view_fragment"
+        tools:layout="@layout/web_view_fragment" >
+
+        <action
+            android:id="@+id/go_to_start_fragment"
+            app:destination="@id/startFragment" />
+
+        <action
+            android:id="@+id/go_to_no_internet_fragment"
+            app:destination="@id/noInternetFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.wenger.mytestapplication.ui.fragments.NoInternetFragment"
+        android:label="@string/no_internet_fragment"
+        tools:layout="@layout/no_internet_fragment" >
+
+        <action
+            android:id="@+id/go_to_web_reconnect"
+            app:destination="@id/webViewFragment"/>
+
+    </fragment>
+
+</navigation>
